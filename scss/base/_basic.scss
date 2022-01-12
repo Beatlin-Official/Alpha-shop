@@ -1,0 +1,67 @@
+/* basic css */
+
+//color  
+$body-bg: #ffffff;
+$black: #2a2a2a;
+$border-gray:#e6e6e6;
+$step-gray: #AFB1BD;
+$label-gary: #808080;
+$input-gray:#999999;
+$footer-gray: #F6F7F8;
+$pink:#f67599;
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Nunito+Sans:wght@600;700&display=swap');
+$body-font:'Nunito Sans',
+'Noto Sans TC';
+$bold-weight: 700;
+$medium-weight: 500;
+$regular-weight: 400;
+//RWD Setting
+@mixin tablet {
+    @media screen and(min-width: 750px) {
+        @content
+    }
+}
+
+;
+@mixin desktop {
+    @media screen and (min-width: 1024px) {
+        h1 {
+            font-size: 32px;
+        }
+        @content
+    }
+}
+
+;
+@mixin desktop-2 {
+    @media screen and (max-width: 1440px) {
+        @content
+    }
+}
+
+body {
+    font-family: $body-font;
+    width: 100%;
+}
+
+.d-none {
+    display: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+}
+
+@mixin getStepNums($num) {
+    @for $i from 1 through $num {
+        &:nth-child(#{$i}) .step__number::after {
+            content: "#{$i}";
+        }
+    }
+}

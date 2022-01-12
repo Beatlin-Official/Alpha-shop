@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style/main.min.css">
+    <title>Alpha Shop 購物車</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <input type="checkbox" class="navbar__toggle" id="navbar-toggle">
+            <label class="navbar__toggle__label" for="navbar-toggle"><img class="menu" src="img/menu-icon@2x.png" alt=""></label>
+
+            <ul class="menu__list">
+                <a class="menu__item" href="">
+                    <li>男款</li>
+                </a>
+                <a class="menu__item" href="">
+                    <li>女款</li>
+                </a>
+                <a class="menu__item" href="">
+                    <li>最新消息</li>
+                </a>
+                <a class="menu__item" href="">
+                    <li>客製商品</li>
+                </a>
+                <a class="menu__item" href="">
+                    <li>聯絡我們</li>
+                </a>
+            </ul>
+
+            <a class="logo__wrapper" href=""><img class="logo__img" src="img/Logo@2x.png" alt=""></a>
+
+            <div class="icon__wrapper">
+                <a href="" class="search-icon"><img class="icon" src="img/search-Icon@2x.png" alt=""></a>
+                <a href="" class="cart-icon"><img class="icon" src="img/cart-Icon@2x.png" alt=""></a>
+                <a href="" class="mode-icon"><img class="icon dark" src="img/dark-icon@2x.png" alt=""></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="main__title">結帳</h1>
+        <div class="main__table">
+
+            <div class="stepper__table">
+                <div class="stepper__wrapper">
+                    <div class="step active">
+                        <div class="step__number"></div>
+                        <p class="step__title">寄送地址</p>
+                        <span class="step__line"></span>
+                    </div>
+                    <div class="step">
+                        <div class="step__number"></div>
+                        <p class="step__title">運送方式</p>
+                        <span class="step__line"></span>
+                    </div>
+                    <div class="step">
+                        <div class="step__number"></div>
+                        <p class="step__title">付款資訊</p>
+                    </div>
+                </div>
+                <form class="form">
+                    <div class="form__wrapper ">
+                        <h2 class="form__title">寄送地址</h2>
+                        <div class="form__content">
+                            <label class="title">
+                                稱謂
+                                <select id="">
+                                    <option value="">請輸入稱謂</option>
+                                    <option value="先生">先生</option>
+                                    <option value="女士">女士</option>
+                                </select>
+                            </label>
+                            <label class="name">
+                                姓名
+                                <input type="text" name="" id="" placeholder="請輸入姓名">
+                            </label>
+                            <label class="phone">
+                                電話
+                                <input type="tel" name="" id="" placeholder="請輸入行動電話">
+                            </label>
+                            <label class="email">
+                                Email
+                                <input type="email" name="" id="" placeholder="請輸入電子郵件">
+                            </label>
+                            <label class="city">
+                                縣市
+                                <select id="">
+                                    <option value="">請選擇縣市</option>
+                                    <option value="">基隆市</option>
+                                    <option value="">台北市</option>
+                                    <option value="">新北市</option>
+                                    <option value="">宜蘭縣</option>
+                                    <option value="">桃園市</option>
+                                    <option value="">新竹市</option>
+                                    <option value="">新竹縣</option>
+                                    <option value="">苗栗縣</option>
+                                    <option value="">台中市</option>
+                                    <option value="">彰化縣</option>
+                                    <option value="">南投縣</option>
+                                    <option value="">雲林縣</option>
+                                    <option value="">嘉義市</option>
+                                    <option value="">嘉義縣</option>
+                                    <option value="">台南市</option>
+                                    <option value="">高雄市</option>
+                                    <option value="">屏東縣</option>
+                                    <option value="">花蓮縣</option>
+                                    <option value="">台東縣</option>
+                                    <option value="">澎湖縣</option>
+                                    <option value="">連江縣</option>
+                                    <option value="">金門縣</option>
+                                </select>
+                            </label>
+                            <label class="address">
+                                地址
+                                <input type="email" name="" id="" placeholder="請輸入地址">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__wrapper d-none">
+                        <h2 class="form__title">運送方式</h2>
+                        <div class="form__content">
+                            <label>
+                                <input type="radio" name="fare" id="free-fare" value="免費" checked>
+                                <label for="free-fare">
+                                    <p>標準運送<br><span>約 3~7 個工作天</span></p>
+                                    <span>免費</span>
+                                </label>
+                            </label>
+                            <label>
+                                <input type="radio" name="fare" id="dhl-fare" value="$500">
+                                <label for="dhl-fare">
+                                    <p>DHL 貨運<br><span>48 小時內送達</span></p>
+                                    <p>$<span>500</span></p>
+                                </label>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__wrapper d-none">
+                        <h2 class="form__title ">付款資訊</h2>
+                        <div class="form__content ">
+                            <label class="credit-card-name ">
+                                持卡人姓名
+                                <input type="credit card name " name=" " id=" " placeholder="John Doe ">
+                            </label>
+                            <label class="credit-card-number ">
+                                卡號
+                                <input type="credit card number " name=" " id=" " placeholder="1111 2222 3333 4444 ">
+                            </label>
+                            <label class="credit-card-date ">
+                                有效期限
+                                <input type="credit card date " name=" " id=" " placeholder="MM/YY ">
+                            </label>
+                            <label class="credit-card-cvc ">
+                                CVC / CCV 
+                                <input type="credit card cvc " name=" " id=" " placeholder="123 ">
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="button__wrapper">
+                    <button class="button left d-none"><img src="img/left@2x.png" alt="">上一步</button>
+                    <button class="button right">下一步<img src="img/right@2x.png" alt=""></button>
+                </div>
+            </div>
+
+            <div class="cart__table">
+                <h3 class="cart__title">購物籃</h3>
+                <div class="product__list ">
+                    <div class="product__item">
+                        <img class="product__img " src="img/product-1@2x.png " alt=" ">
+                        <div class="product__info">
+                            <p>破壞補丁修身牛仔褲</p>
+                            <div class="product__count ">
+                                <button class="icon decrease"><img src="img/decrease-icon@2x.png " alt=" "></button>
+                                <p class="quantity">1</p>
+                                <button class="icon increase"><img src="img/Increase-icon@2x.png" alt=" "></button>
+                            </div>
+                            <div class="price">
+                                <p class="count-price"> $3,299</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__item ">
+                        <img class="product__img" src="img/product-2@2x.png " alt=" ">
+                        <div class="product__info">
+                            <p>刷色直筒牛仔褲</p>
+                            <div class="product__count ">
+                                <button class="icon decrease"><img src="img/decrease-icon@2x.png " alt=" "></button>
+                                <p class="quantity">1</p>
+                                <button class="icon increase"><img src="img/Increase-icon@2x.png" alt=" "></button>
+                            </div>
+                            <div class="price">
+                                <p class="count-price">$1,299</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__fare ">
+                    <p>運費<span class="fare">免費</span></p>
+                </div>
+                <div class="cart__total ">
+                    <p>小計<span class="total">$4,598</span></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="footer__wrapper">
+            <a class="logo__wrapper " href=" "><img class="logo__img " src="img/Logo@2x.png " alt=" "></a>
+            <div class="footer__list service ">
+                <h2 class="title ">客戶服務</h2>
+                <p class="service-item ">運送說明</p>
+                <p class="service-item ">退換貨相關</p>
+                <p class="service-item ">付款資訊</p>
+                <p class="service-item ">FAQ</p>
+            </div>
+            <div class="footer__list about ">
+                <h2 class="title ">關於我們</h2>
+                <p class="about-item ">品牌故事</p>
+                <p class="about-item ">媒體聯繫</p>
+                <p class="about-item ">Press kit</p>
+            </div>
+            <div class="footer__list info ">
+                <h2 class="title ">資訊</h2>
+                <p class="about-item ">隱私權政策</p>
+                <p class="about-item ">Cookie</p>
+                <p class="about-item ">GDPR</p>
+            </div>
+            <div class="footer__list contact ">
+                <h2 class="title ">追蹤 ALPHA Shop</h2>
+                <p class="info-item ">+886 02123-45678</p>
+                <a class="icon " href=" "><img src="img/fb-icon@2x.png " alt=" "></a>
+                <a class="icon " href=" "><img src="img/ig-icon@2x.png " alt=" "></a>
+                <a class="icon " href=" "><img src="img/message-icon@2x.png " alt=" "></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js " integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous "></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

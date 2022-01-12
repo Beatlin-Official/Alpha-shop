@@ -1,0 +1,405 @@
+    main {
+        position: relative;
+        width: 90%;
+        margin: 70px auto;
+        h1,
+        h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        label {
+            font-size: 12px;
+            color: $label-gary;
+        }
+        @include desktop {
+            width: 75%;
+        }
+    }
+    
+    .main__table {
+        @include tablet {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: start;
+            column-gap: 9vw;
+        }
+    }
+    
+    .stepper__table {
+        @include tablet {
+            flex: 3 0 220px;
+        }
+    }
+    
+    .stepper__wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 24px;
+        .step {
+            position: relative;
+            flex: 0 1 auto;
+            display: flex;
+            justify-content: center;
+            line-height: 32px;
+            @include getStepNums(5);
+            @include desktop {
+                line-height: 24px;
+            }
+            &.active,
+            &.checked {
+                .step__number {
+                    background: $black;
+                    color: $body-bg;
+                    border: unset;
+                }
+                .step__title {
+                    display: none;
+                    color: $black;
+                    @include desktop {
+                        display: unset;
+                    }
+                }
+            }
+            &.checked .step__number::after {
+                content: "\2714";
+            }
+            &__number {
+                height: 32px;
+                width: 32px;
+                border-radius: 32px;
+                text-align: center;
+                font-weight: $bold-weight;
+                font-size: 16px;
+                background: $body-bg;
+                color: $border-gray;
+                border: 1px solid $border-gray;
+                @include desktop {
+                    height: 24px;
+                    width: 24px;
+                    font-size: 12px;
+                }
+            }
+            &__title {
+                display: none;
+                margin-left: 32px;
+                font-size: 24px;
+                color: $border-gray;
+                @include desktop {
+                    display: inline-block;
+                    margin-left: 12px;
+                    font-size: 16px;
+                }
+            }
+            &__line {
+                position: absolute;
+                display: block;
+                left: 120%;
+                width: 100px;
+                top: 50%;
+                height: 1px;
+                background: $border-gray;
+            }
+        }
+    }
+    
+    .form__wrapper {
+        .form__content {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 30px;
+            row-gap: 24px;
+            @include tablet {
+                margin-bottom: 30px;
+            }
+            label {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                input,
+                select {
+                    padding: 12px 16px;
+                    margin: 8px 0;
+                    width: 100%;
+                    border: 1px solid $border-gray;
+                    border-radius: 4px;
+                    font-weight: $regular-weight;
+                    &:hover {
+                        border: 1px solid $black;
+                    }
+                }
+            }
+        }
+        &:nth-child(1)>.form__content {
+            label {
+                &:nth-child(1) {
+                    width: 30%;
+                }
+                &:nth-child(2) {
+                    flex-grow: 1;
+                    width: 60%;
+                }
+                &:nth-child(3),
+                &:nth-child(4) {
+                    @include tablet {
+                        width: 45%;
+                        flex-grow: 1;
+                    }
+                }
+                &:nth-child(5) {
+                    @include tablet {
+                        width: 30%;
+                    }
+                }
+                &:nth-child(6) {
+                    @include tablet {
+                        flex-grow: 1;
+                        width: 60%;
+                    }
+                }
+            }
+            @include tablet {}
+        }
+        &:nth-child(2)>.form__content {
+            label {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                border: 1px solid $border-gray;
+                border-radius: 4px;
+                padding: 0 10px;
+                color: $black;
+                font-size: 14px;
+                &:hover {
+                    border: 1px solid $black;
+                }
+                >label {
+                    padding: 8px;
+                    border: none;
+                    &:hover {
+                        border: none;
+                    }
+                }
+            }
+            input[type="radio"] {
+                -webkit-appearance: none;
+                border-radius: 100%;
+                width: 35px;
+                height: 35px;
+                transform: scale(0.5, 0.5);
+                cursor: pointer;
+                &:checked {
+                    box-shadow: inset 0 0 0 10px $black;
+                }
+            }
+            .dhl-fare p {
+                font-weight: $bold-weight;
+            }
+            span {
+                font-weight: $regular-weight;
+                font-size: 12px;
+            }
+        }
+        &:nth-child(3)>.form__content {
+            label {
+                &:nth-child(1),
+                &:nth-child(2) {
+                    @include tablet {
+                        width: 70%;
+                    }
+                }
+                &:nth-child(3),
+                &:nth-child(4) {
+                    flex-grow: 1;
+                    width: 45%;
+                }
+            }
+        }
+    }
+    
+    .cart__table {
+        margin: 32px 0;
+        padding: 16px;
+        border: 1px solid $border-gray;
+        border-radius: 8px;
+        @include tablet {
+            flex: 2 0 180px;
+            margin: 0;
+            padding: auto 16px;
+            height: 492px;
+        }
+        h3 {
+            display: none;
+            font-size: 18px;
+            margin: 20px 0;
+            @include tablet {
+                display: block;
+            }
+        }
+        .product__item {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            height: 100px;
+            margin-bottom: 24px;
+            img {
+                pointer-events: none
+            }
+            .product__img {
+                width: 100px;
+            }
+            .product__info {
+                position: relative;
+                width: 70%;
+                display: grid;
+                gap: 10px;
+                justify-items: end;
+                align-items: center;
+                margin-left: 10px;
+                @include tablet {
+                    // display: flex;
+                    // flex-wrap: wrap column;
+                    align-items: start;
+                    justify-items: start;
+                }
+                >p {
+                    @include tablet {
+                        font-size: 14px;
+                        width: 100%;
+                    }
+                    @include desktop {
+                        font-size: 16px;
+                    }
+                }
+            }
+            .product__count {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 117px;
+                height: 27px;
+                @include desktop {
+                    margin-top: 0;
+                }
+                button {
+                    width: 27px;
+                    padding: 0;
+                }
+            }
+            .price>p {
+                font-weight: $bold-weight;
+            }
+        }
+        .cart__fare,
+        .cart__total {
+            position: relative;
+            font-size: 14px;
+            width: 100%;
+            padding: 18px 0;
+            border-top: 1px solid $border-gray;
+            span {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                font-weight: $bold-weight;
+                padding: 18px 0;
+            }
+        }
+    }
+    
+    .button__wrapper {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: -120px;
+        display: flex;
+        justify-content: space-around;
+        column-gap: 34px;
+        width: 100%;
+        padding: 24px 0;
+        border-top: 1px solid $border-gray;
+        @include tablet {
+            position: inherit;
+        }
+        button {
+            display: flex;
+            column-gap: 8px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border-radius: 8px;
+            padding: 11px;
+            background: $pink;
+            font-weight: $medium-weight;
+            font-size: 14px;
+            line-height: 8px;
+        }
+        .left {
+            background: $body-bg;
+            justify-content: left;
+        }
+        .right,
+        .accept {
+            color: $body-bg;
+        }
+        img {
+            width: 24px;
+            height: 24px;
+        }
+        .d-none {
+            display: none;
+        }
+    }
+    
+    footer {
+        display: none;
+        margin-top: 120px;
+        height: 284px;
+        background: $footer-gray;
+        @include tablet {
+            display: flex;
+        }
+    }
+    
+    .footer__wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        margin: 50px auto;
+        img {
+            height: 24px;
+        }
+        @include desktop {
+            width: 75%;
+        }
+    }
+    
+    .footer__list {
+        height: 140px;
+        .title {
+            margin-bottom: 12px;
+        }
+        h2 {
+            font-size: 16px;
+            @include desktop {
+                font-size: 24px;
+            }
+        }
+        p {
+            font-size: 14px;
+            color: $label-gary;
+            @include desktop {
+                font-size: 16px;
+            }
+        }
+        a {
+            display: inline-block;
+            width: 24px;
+        }
+    }
